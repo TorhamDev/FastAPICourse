@@ -1,0 +1,66 @@
+{
+  "editor.fontSize": 14,
+  "explorer.confirmDelete": false,
+  "python.defaultInterpreterPath": "/usr/bin/python3",
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "python.analysis.typeCheckingMode": "basic",
+  "workbench.editorAssociations": {
+    "*.dump": "default"
+  },
+  "editor.largeFileOptimizations": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.formatOnType": true,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "editor.tabCompletion": "on",
+    "editor.autoIndent": "advanced",
+    "editor.trimAutoWhitespace": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "tabnine.experimentalAutoImports": true,
+  "files.autoSave": "off",
+  "editor.formatOnSaveMode": "file",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#0075d3",
+    "activityBar.background": "#0075d3",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#ff80c6",
+    "activityBarBadge.foreground": "#15202b",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#0075d3",
+    "statusBar.background": "#0059a0",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#0075d3",
+    "statusBarItem.remoteBackground": "#0059a0",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#0059a0",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#0059a099",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "editor.inlineSuggest.enabled": true,
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "flake8.args": ["--max-line-length", "88", "--ignore=E501,E711"],
+  "python.analysis.autoImportCompletions": true,
+  "isort.args": ["--multi-line=8", "--line-length=88"],
+  "hediet.vscode-drawio.resizeImages": null,
+  "python.testing.pytestArgs": [
+    "tests"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true
+}
