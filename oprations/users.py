@@ -1,23 +1,29 @@
 import sqlalchemy as sa
-from fastapi import HTTPException, status
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from db.models import User
-from exceptions import UserNotFound
+from exceptions import UserAlreadyExists, UserNotFound
+from schema.output import RegisterOutput
+from utils.secrets import password_manager
 
 
 class UsersOpration:
     def __init__(self, db_session: AsyncSession) -> None:
         self.db_session = db_session
 
-    async def create(self, username: str, password: str) -> User:
-        user = User(password=password, username=username)
+    async def create(self, username: str, password: str) -> RegisterOutput:
+        user_pwd = password_manager.hash(password)
+        user = User(password=user_pwd, username=username)
 
         async with self.db_session as session:
-            session.add(user)
-            await session.commit()
+            try:
+                session.add(user)
+                await session.commit()
+            except IntegrityError:
+                raise UserAlreadyExists
 
-        return user
+        return RegisterOutput(username=user.username, id=user.id)
 
     async def get_user_by_username(self, username: str) -> User:
         query = sa.select(User).where(User.username == username)
