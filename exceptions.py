@@ -11,3 +11,9 @@ class UserAlreadyExists(HTTPException):
     def __init__(self) -> None:
         self.status_code = 400
         self.detail = "user alreadt exists!"
+
+
+class UsernameOrPasswordIncorrect(HTTPException):
+    def __init__(self) -> None:
+        self.status_code = 400
+        self.detail = "username or password is incorrect!"
